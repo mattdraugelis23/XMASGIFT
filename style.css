@@ -110,3 +110,18 @@ h1 {
   }
 }
 
+
+.password-input {
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: none;
+  margin-bottom: 12px;
+  width: 220px;
+  text-align: center;
+}
+
+.error {
+  color: #ffb3b3;
+  margin-top: 10px;
+}
