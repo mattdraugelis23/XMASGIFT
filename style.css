@@ -1,0 +1,19 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin-top: 100px;
+}
+
+#wrap {
+  font-size: 120px;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+.hidden {
+  display: none;
+}
+
+.unwrapped {
+  transform: scale(0);
+  opacity: 0;
+}
