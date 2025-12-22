@@ -1,23 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title> A gift</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A Gift for You</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<div id="gift">
-  <div id="wrap">🎁</div>
-  <button id="unwrapBtn">Unwrap</button>
-</div>
+  <div class="container">
+    <h1>🎄 A Little Something For You</h1>
+    <p class="subtitle">Pick one first — you can come back for the other 🙂</p>
 
-<div id="coupon" class="hidden">
-  <h1>🎉 Surprise!</h1>
-  <p>Your coupon code is:</p>
-  <code>FREE-COFFEE-2025</code>
-</div>
+    <div class="choice-grid">
+      <a class="card" href="gift.html">
+        <div class="emoji">🎁</div>
+        <h2>Open Gift</h2>
+        <p>Click to unwrap your surprise</p>
+      </a>
 
-<script src="script.js"></script>
+      <a class="card" href="letter.html">
+        <div class="emoji">💌</div>
+        <h2>Read Letter</h2>
+        <p>A note I wrote for you</p>
+      </a>
+    </div>
+  </div>
+
 </body>
 </html>
+
