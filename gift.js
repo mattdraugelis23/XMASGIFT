@@ -11,5 +11,12 @@ btn.addEventListener("click", () => {
   setTimeout(() => {
     giftBox.classList.add("hidden");
     reveal.classList.remove("hidden");
+
+    confetti({
+      particleCount: 120,
+      spread: 70,
+      origin: { y: 0.6 }
+    });
+
   }, 800);
 });
