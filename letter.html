@@ -28,5 +28,28 @@
     </div>
   </div>
 
+
+  <script>
+  const text = `
+          I am so excited to spend our first Christmas together, you mean the world to me and it is so amazing to be with you. I can't wait to grow old with you and spend more and more holidays together and create our own traditons. You are my perfect sweet angel and I love everything about you. I truly hope you know how important you are to me and how much you mean to me. You are everything I could ever ask for in life. I am so proud of you in so many regards everyday, and it is such a honor to be able to spend my days with you. I know life has been hard recently with a lot of things happening at once, but you have been handling things so well and I am so proud of you. You are truly one of the most talented people I have ever met, from your photography, to writing, to music, I am blown away with the quality you work at, and I love being in your life to see your creativity blossom. You are the most beautiful person I have ever met, everyday I am blown away by your beauty, as well as your kind soul. You are the most perfect person in the world, and everday I get to spend with you I feel like the luckiest person in the world. You make my life so much better and worth living, and push me to be the best person I can be, for us. I love you so much my princess and Merry Christmas.  
+
+
+`;
+
+  const speed = 35; // typing speed in ms
+  let index = 0;
+  const target = document.getElementById("typedText");
+
+  function typeWriter() {
+    if (index < text.length) {
+      target.innerHTML += text.charAt(index);
+      index++;
+      setTimeout(typeWriter, speed);
+    }
+  }
+
+  typeWriter();
+</script>
+
 </body>
 </html>
