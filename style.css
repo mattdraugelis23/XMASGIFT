@@ -1,11 +1,16 @@
+/* ===== Global Theme (Christmas Night) ===== */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  background: #0b1220;
-  color: white;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #0b1220 0%, #14213d 100%);
+  color: #f8f9fa;
 }
 
+/* Make sure snow can sit on top of background but below content */
 .container {
+  position: relative;
+  z-index: 2;
   max-width: 900px;
   margin: 0 auto;
   padding: 60px 20px;
@@ -15,6 +20,11 @@ body {
 h1 {
   margin-bottom: 10px;
   font-size: 2.2rem;
+  color: #e63946; /* festive red */
+}
+
+h2 {
+  color: #e63946; /* festive red */
 }
 
 .subtitle {
@@ -22,6 +32,7 @@ h1 {
   margin-bottom: 30px;
 }
 
+/* ===== Cards / Menu ===== */
 .choice-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -30,18 +41,19 @@ h1 {
 }
 
 .card {
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 16px;
   padding: 26px;
   text-decoration: none;
-  color: white;
-  transition: transform 0.15s ease, background 0.15s ease;
+  color: #f8f9fa;
+  transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
 }
 
 .card:hover {
   transform: translateY(-3px);
-  background: rgba(255,255,255,0.12);
+  background: rgba(255, 255, 255, 0.12);
+  border-color: #e63946; /* red accent on hover */
 }
 
 .emoji {
@@ -53,9 +65,15 @@ h1 {
   display: inline-block;
   margin-bottom: 25px;
   text-decoration: none;
-  color: rgba(255,255,255,0.85);
+  color: rgba(255, 255, 255, 0.85);
 }
 
+.back:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* ===== Buttons ===== */
 .btn {
   margin-top: 14px;
   padding: 12px 20px;
@@ -63,8 +81,22 @@ h1 {
   border: none;
   cursor: pointer;
   font-size: 1rem;
+  background: #2a9d8f; /* pine green */
+  color: white;
+  transition: transform 0.12s ease, filter 0.12s ease;
 }
 
+.btn:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
+
+.btn:disabled {
+  opacity: 0.75;
+  cursor: not-allowed;
+}
+
+/* ===== Gift Page ===== */
 .gift-box {
   margin-top: 25px;
 }
@@ -93,24 +125,24 @@ h1 {
   opacity: 0.8;
 }
 
+/* ===== Letter Page ===== */
 .letter {
   text-align: left;
   margin: 0 auto;
   max-width: 650px;
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 16px;
   padding: 22px;
   line-height: 1.6;
 }
 
-@media (max-width: 700px) {
-  .choice-grid {
-    grid-template-columns: 1fr;
-  }
+/* Typewriter target */
+#typedText {
+  white-space: pre-line;
 }
 
-
+/* ===== Password Gate ===== */
 .password-input {
   padding: 12px;
   font-size: 1rem;
@@ -126,12 +158,8 @@ h1 {
   margin-top: 10px;
 }
 
-
-#typedText {
-  white-space: pre-line; 
-}
-
-
+/* ===== Snow Overlay (Option 2) ===== */
+/* Put snow above background but below content */
 .snow {
   position: fixed;
   top: 0;
@@ -139,13 +167,18 @@ h1 {
   width: 100%;
   height: 100%;
   pointer-events: none;
+  z-index: 1;
+
+  /* FIXED: your gradient had a typo (2px _toggle_2px) */
   background-image:
-    radial-gradient(2px _toggle_2px at 10% 10%, white, transparent),
-    radial-gradient(2px 2px at 30% 20%, white, transparent),
-    radial-gradient(2px 2px at 50% 30%, white, transparent),
-    radial-gradient(2px 2px at 70% 40%, white, transparent),
-    radial-gradient(2px 2px at 90% 50%, white, transparent);
+    radial-gradient(2px 2px at 10% 10%, rgba(255,255,255,0.95), transparent),
+    radial-gradient(2px 2px at 30% 20%, rgba(255,255,255,0.9), transparent),
+    radial-gradient(2px 2px at 50% 30%, rgba(255,255,255,0.9), transparent),
+    radial-gradient(2px 2px at 70% 40%, rgba(255,255,255,0.85), transparent),
+    radial-gradient(2px 2px at 90% 50%, rgba(255,255,255,0.85), transparent);
+
   animation: snow 10s linear infinite;
+  opacity: 0.9;
 }
 
 @keyframes snow {
@@ -153,4 +186,9 @@ h1 {
   to { background-position: 0 100vh; }
 }
 
-
+/* ===== Mobile ===== */
+@media (max-width: 700px) {
+  .choice-grid {
+    grid-template-columns: 1fr;
+  }
+}
